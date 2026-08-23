@@ -1,0 +1,86 @@
+:root {
+  --indigo-950: #171d38;
+  --indigo-900: #1e2547;
+  --indigo-800: #2a3564;
+  --indigo-700: #3a4784;
+  --turmeric-500: #e3a32b;
+  --turmeric-400: #eab654;
+  --terracotta-600: #c15a3c;
+  --terracotta-500: #d67150;
+  --thread-green: #5c7a5e;
+  --paper-100: #f4ecdb;
+  --paper-50: #faf5ea;
+  --ink-900: #191a22;
+  --ink-600: #4d4f5c;
+  --line: rgba(23, 29, 56, 0.12);
+  --line-on-dark: rgba(244, 236, 219, 0.18);
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Work Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --radius-card: 14px;
+  --shadow-card: 0 10px 30px -14px rgba(23, 29, 56, 0.35);
+}
+
+html, body { background: var(--paper-50); color: var(--ink-900); font-family: var(--font-body); scroll-behavior: smooth; }
+h1, h2, h3, .display-font { font-family: var(--font-display); letter-spacing: -0.01em; }
+.font-mono { font-family: var(--font-mono); }
+a { color: inherit; }
+
+.hh-navbar { background: var(--indigo-950); border-bottom: 1px solid var(--line-on-dark); }
+.hh-navbar .brand-mark { font-family: var(--font-display); font-weight: 700; font-style: italic; font-size: 1.5rem; color: var(--paper-100); }
+.hh-navbar .brand-mark span { color: var(--turmeric-500); font-style: normal; }
+.hh-navbar .nav-link { color: rgba(244, 236, 219, 0.78) !important; font-weight: 500; font-size: 0.95rem; }
+.hh-navbar .nav-link:hover, .hh-navbar .nav-link.active { color: var(--turmeric-400) !important; }
+.hh-navbar .btn-cta { background: var(--terracotta-600); border: none; color: var(--paper-50); font-weight: 600; }
+.hh-navbar .btn-cta:hover { background: var(--terracotta-500); color: var(--paper-50); }
+
+.hh-hero { background: radial-gradient(120% 140% at 15% -10%, var(--indigo-800) 0%, var(--indigo-950) 55%, var(--indigo-950) 100%); color: var(--paper-100); position: relative; overflow: hidden; }
+.hh-hero .eyebrow { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem; color: var(--turmeric-400); }
+.hh-hero h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 600; line-height: 1.05; }
+.hh-hero h1 em { font-style: italic; color: var(--turmeric-500); }
+.hh-hero p.lead { color: rgba(244, 236, 219, 0.82); font-size: 1.15rem; max-width: 42rem; }
+.hh-stat { font-family: var(--font-mono); color: var(--turmeric-400); font-size: 1.6rem; font-weight: 500; }
+.hh-stat-label { font-size: 0.78rem; color: rgba(244, 236, 219, 0.65); text-transform: uppercase; letter-spacing: 0.08em; }
+
+.hh-thread-divider { display: block; width: 100%; height: 28px; margin: 0.25rem 0; }
+.hh-thread-divider--dark path { stroke: var(--line-on-dark); }
+.hh-thread-divider--light path { stroke: var(--line); }
+
+.hh-category-tile { background: var(--paper-100); border: 1.5px solid var(--indigo-950); border-radius: 10px; padding: 1.1rem 1rem; text-align: center; text-decoration: none; color: var(--ink-900); display: block; transition: transform 0.15s ease, box-shadow 0.15s ease; box-shadow: 3px 3px 0 var(--terracotta-600); }
+.hh-category-tile:nth-child(even) { box-shadow: 3px 3px 0 var(--thread-green); }
+.hh-category-tile:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--turmeric-500); color: var(--ink-900); }
+.hh-category-tile .icon { font-size: 1.8rem; display: block; margin-bottom: 0.4rem; }
+.hh-category-tile .name { font-family: var(--font-display); font-weight: 600; font-size: 1rem; }
+
+.hh-card { background: var(--paper-100); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); overflow: hidden; }
+.hh-card-header-strip { height: 6px; background: linear-gradient(90deg, var(--terracotta-600), var(--turmeric-500)); }
+.hh-badge-verified { background: var(--thread-green); color: var(--paper-50); font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 20px; letter-spacing: 0.03em; }
+.hh-badge-pending { background: rgba(193, 90, 60, 0.14); color: var(--terracotta-600); font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 20px; }
+.hh-price { font-family: var(--font-mono); font-weight: 500; color: var(--terracotta-600); }
+.hh-rating { color: var(--turmeric-500); font-family: var(--font-mono); font-size: 0.9rem; }
+
+.hh-section-title { font-family: var(--font-display); font-weight: 600; font-size: 1.9rem; }
+.hh-section-title .accent { font-style: italic; color: var(--terracotta-600); }
+
+.btn-hh-primary { background: var(--indigo-950); color: var(--paper-100); border: none; font-weight: 600; border-radius: 8px; }
+.btn-hh-primary:hover { background: var(--indigo-800); color: var(--paper-100); }
+.btn-hh-accent { background: var(--terracotta-600); color: var(--paper-50); border: none; font-weight: 600; border-radius: 8px; }
+.btn-hh-accent:hover { background: var(--terracotta-500); color: var(--paper-50); }
+.btn-hh-outline { background: transparent; border: 1.5px solid var(--indigo-950); color: var(--indigo-950); font-weight: 600; border-radius: 8px; }
+.btn-hh-outline:hover { background: var(--indigo-950); color: var(--paper-100); }
+
+.hh-status { font-family: var(--font-mono); font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.04em; }
+.hh-status-pending { background: rgba(227,163,43,0.18); color: #8a6510; }
+.hh-status-accepted, .hh-status-confirmed { background: rgba(92,122,94,0.16); color: var(--thread-green); }
+.hh-status-rejected, .hh-status-cancelled { background: rgba(193,90,60,0.14); color: var(--terracotta-600); }
+.hh-status-completed, .hh-status-delivered { background: rgba(30,37,71,0.1); color: var(--indigo-900); }
+
+.hh-form-panel { background: var(--paper-100); border-radius: var(--radius-card); box-shadow: var(--shadow-card); border: 1px solid var(--line); }
+.form-control:focus, .form-select:focus { border-color: var(--terracotta-500); box-shadow: 0 0 0 0.2rem rgba(193, 90, 60, 0.15); }
+
+.hh-footer { background: var(--indigo-950); color: rgba(244, 236, 219, 0.7); }
+.hh-footer a:hover { color: var(--turmeric-400); }
+
+.hh-eyebrow-mono { font-family: var(--font-mono); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--terracotta-600); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
