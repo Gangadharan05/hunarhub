@@ -6,7 +6,9 @@
       "installCommand": "npm install --legacy-peer-deps"
     },
     "backend": {
-      "root": "backend"
+      "root": "backend",
+      "framework": "express",
+      "entrypoint": "src/server.js"
     }
   },
   "rewrites": [
