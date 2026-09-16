@@ -77,7 +77,7 @@ just open `http://localhost:5173` once both servers are running.
 
 | Role         | Email                          |
 |--------------|---------------------------------|
-| Admin        | admin@hunarhub.in              |
+| Admin        | admin@hunarhub.in                |
 | Entrepreneur | ravi.cobbler@hunarhub.in        |
 | Entrepreneur | meena.potter@hunarhub.in        |
 | Customer     | priya.customer@hunarhub.in      |
