@@ -52,7 +52,7 @@ export default function Login() {
           Demo: admin@hunarhub.in  Pass: Password123 
         </p>
         <p className="small text-muted mt-2 mb-0 font-mono" style={{ fontSize: '0.75rem' }}>
-          Demo:  customer@gmail.com / password: Password123
+          Demo: priya.customer@hunarhub.in / password: Password123
         </p>
       </div>
     </div>
