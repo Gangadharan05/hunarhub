@@ -1,12 +1,29 @@
-import React from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 
 export default function Navbar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const [open, setOpen] = useState(false);
+
+  // Close the mobile menu whenever the route changes
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  // If the window is widened to desktop size, reset the menu state
+  useEffect(() => {
+    function onResize() {
+      if (window.innerWidth >= 992) setOpen(false);
+    }
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   function handleLogout() {
+    setOpen(false);
     logout();
     navigate('/');
   }
@@ -24,10 +41,21 @@ export default function Navbar() {
         <Link className="navbar-brand brand-mark" to="/">
           Hunar<span>Hub</span>
         </Link>
-        <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#hhNav" style={{ filter: 'invert(1)' }}>
+
+        <button
+          className={`navbar-toggler border-0 ${open ? '' : 'collapsed'}`}
+          type="button"
+          aria-controls="hhNav"
+          aria-expanded={open}
+          aria-label="Toggle navigation"
+          onClick={() => setOpen((prev) => !prev)}
+          style={{ filter: 'invert(1)' }}
+        >
           <span className="navbar-toggler-icon" />
         </button>
-        <div className="collapse navbar-collapse" id="hhNav">
+
+        {/* "show" is controlled by React state instead of Bootstrap's JS */}
+        <div className={`collapse navbar-collapse ${open ? 'show' : ''}`} id="hhNav">
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-3">
             <li className="nav-item">
               <NavLink className="nav-link" to="/browse">Browse Entrepreneurs</NavLink>
