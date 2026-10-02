@@ -49,10 +49,10 @@ export default function Login() {
           New here? <Link to="/register">Create an account</Link>
         </p>
         <p className="small text-muted mt-2 mb-0 font-mono" style={{ fontSize: '0.75rem' }}>
-          Demo: admin@hunarhub.in  Pass: MyNewAdminPass1 
+          Demo: admin@hunarhub.in  Pass: Password123 
         </p>
         <p className="small text-muted mt-2 mb-0 font-mono" style={{ fontSize: '0.75rem' }}>
-          Demo:  customer@gmail.com / password: customer
+          Demo:  customer@gmail.com / password: Password123
         </p>
       </div>
     </div>
